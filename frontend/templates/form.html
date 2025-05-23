@@ -12,6 +12,7 @@
 </head>
 <body>
     <!-- <h1>Cadastro de Paciente</h1> -->
+    <h1>Cadastro de Paciente</h1>
     <form method="POST" action="/cadastrar">
         <h1>Cadastro de Paciente</h1>
         Nome: <input type="text" name="nome_completo" required><br>
@@ -43,5 +44,9 @@
 
         <button type="submit">Cadastrar</button>
     </form>
+
+
+ <a href="{{ url_for('listar_pacientes') }}">lista</a>
+
 </body>
 </html>

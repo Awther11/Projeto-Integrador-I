@@ -10,8 +10,11 @@ app = Flask(__name__)
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 conn = psycopg2.connect(DATABASE_URL)
-cursor = conn.cursor()
+
 print("DATABASE_URL:", DATABASE_URL)
+
+
+cursor = conn.cursor()
 
 
 @app.route('/')
@@ -53,6 +56,14 @@ def cadastrar():
     conn.commit()
 
     return "Paciente cadastrado com sucesso!"
+
+
+@app.route('/listar')
+
+def listar_pacientes():
+    cursor.execute("SELECT id, nome FROM pacientes")
+    pacientes = cursor.fetchall()
+    return render_template('lista_pacientes.html', pacientes=pacientes)
 
 
 if __name__ == '__main__':

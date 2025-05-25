@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Cuidador</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST">
+        Email: <input type="text" name="email"><br>
+        Senha: <input type="password" name="senha"><br>
+        <button type="submit">Entrar</button>
+    </form>
+
+    <a href="{{ url_for('cadastro_cuidador') }}">Cadastre-se</a>
+</body>
+</html>

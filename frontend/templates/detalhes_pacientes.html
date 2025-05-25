@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes do Paciente</title>
+</head>
+<body>
+    <h1>Informações do Paciente</h1>
+
+    {% if paciente %}
+        <ul>
+            <li><strong>Nome:</strong> {{ paciente[1] }}</li>
+            <li><strong>Data de nascimento:</strong> {{ paciente[2] }}</li>
+            <li><strong>Sexo:</strong> {{ paciente[3] }}</li>
+            <li><strong>CPF:</strong> {{ paciente[4] }}</li>
+            <li><strong>Email:</strong> {{ paciente[5] }}</li>
+
+        </ul>
+    {% else %}
+        <p>Paciente não encontrado.</p>
+    {% endif %}
+
+    <a href="{{ url_for('dashboard') }}">←Voltar</a>
+</body>
+</html>

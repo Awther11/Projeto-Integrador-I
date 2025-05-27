@@ -8,11 +8,11 @@
 
     {% if paciente %}
         <ul>
-            <li><strong>Nome:</strong> {{ paciente[1] }}</li>
-            <li><strong>Data de nascimento:</strong> {{ paciente[2] }}</li>
-            <li><strong>Sexo:</strong> {{ paciente[3] }}</li>
-            <li><strong>CPF:</strong> {{ paciente[4] }}</li>
-            <li><strong>Email:</strong> {{ paciente[5] }}</li>
+            <li><strong>Nome:</strong> {{ paciente.nome }}</li>
+            <li><strong>Data de nascimento:</strong> {{ paciente.data_nasc }}</li>
+            <li><strong>Sexo:</strong> {{ paciente.sexo }}</li>
+            <li><strong>CPF:</strong> {{ paciente.cpf }}</li>
+            <li><strong>Email:</strong> {{ paciente.email }}</li>
 
         </ul>
     {% else %}

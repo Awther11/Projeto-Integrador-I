@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Pacientes do Cuidador</h1>
+    <a href="{{ url_for('form') }}">Cadastrar Novo Paciente</a>
+    <ul>
+        {% for paciente in pacientes %}
+        <li><a href="{{ url_for('detalhes_pacientes', id=paciente.id) }}">({{ paciente.nome }})</a> (Nascimento: {{ paciente.data_nasc.strftime('%d/%m/%Y') }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('logout') }}">Sair</a>
+</body>
+</html>

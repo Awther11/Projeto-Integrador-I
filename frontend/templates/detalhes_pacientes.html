@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Detalhes do Paciente</title>
+    <link rel="stylesheet" href="css/detalhes_pacientes.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Informações do Paciente</h1>
+
+        {% if paciente %}
+        <ul>
+            <li><strong>Nome:</strong> {{ paciente.nome }}</li>
+            <li><strong>Data de nascimento:</strong> {{ paciente.data_nasc }}</li>
+            <li><strong>Sexo:</strong> {{ paciente.sexo }}</li>
+            <li><strong>CPF:</strong> {{ paciente.cpf }}</li>
+            <li><strong>Email:</strong> {{ paciente.email }}</li>
+        </ul>
+        {% else %}
+        <p>Paciente não encontrado.</p>
+        {% endif %}
+
+        <a href="{{ url_for('dashboard') }}">← Voltar</a>
+    </div>
+</body>
+
+</html>
